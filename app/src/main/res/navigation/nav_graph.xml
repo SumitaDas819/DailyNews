@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/breakingNewsFragments">
+
+    <fragment
+        android:id="@+id/breakingNewsFragments"
+        android:name="com.sumita.dailynews.ui.fragments.BreakingNewsFragments"
+        android:label="BreakingNewsFragments"
+        tools:layout="@layout/fragment_breaking_news">
+
+        <action
+            android:id="@+id/action_breakingNewsFragments3_to_articleFragments"
+            app:destination="@id/articleFragments"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchNewsFragments"
+        android:name="com.sumita.dailynews.ui.fragments.SearchNewsFragments"
+        android:label="SearchNewsFragments"
+        tools:layout="@layout/fragment_search_news">
+
+        <action
+            android:id="@+id/action_searchNewsFragments_to_articleFragments"
+            app:destination="@id/articleFragments"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/articleFragments"
+        android:name="com.sumita.dailynews.ui.fragments.ArticleFragments"
+        android:label="ArticleFragments"
+        tools:layout="@layout/fragment_article" >
+        <argument
+            android:name="Article"
+            app:argType="com.sumita.dailynews.model.Article" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/savedNewsFragments"
+        android:name="com.sumita.dailynews.ui.fragments.SavedNewsFragments"
+        android:label="SavedNewsFragments"
+        tools:layout="@layout/fragment_saved_news">
+
+        <action
+            android:id="@+id/action_savedNewsFragments2_to_articleFragments"
+            app:destination="@id/articleFragments"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+
+</navigation>
